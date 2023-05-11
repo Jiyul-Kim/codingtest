@@ -9,6 +9,6 @@
 // > while로 하려 했으나 조건을 어떻게 해야할지 몰라서 실패 
  
 function solution(my_string, letter) {
-    return my_string.replaceAll(letter, ""); 
+    console.log(my_string.replaceAll(letter, "")) ; 
 }
 solution("BCBdbe", "B")
