@@ -54,6 +54,12 @@ num.reduce((ac, cr) => {
 ```
 ### 같은 글자인지 판단하기
 > 예로 들어 "allpe", "apple" 두 문자가 있다 치면, 글자를 오름차순으로 해서 같은 글자가 되는지만 보면 되는 것임.
+### sort를 이용할 때 배열 안 깨트리기
+```js
+const newArr = [3, 76, 24].slice().sort((a,b) => a-b)
+>>> [3, 24, 76]
+```
+slice()는 특정 범위의 배열을 복제하는 것인데, 딱히 인자를 안넣었으니 전체 배열을 복사한다는 의미
 
 # Math
 ## ceil (올림)
@@ -84,12 +90,23 @@ const my_stirng = "people"
 
 [...new Set(my_string)].join('')
 ```
+# 원래 배열의 기반한 배열 순위 매기기 
+1. 배열 솔팅하기 
 ```js
-
+const newArr = emergency.slice().sort((a,b) => b-a)
 ```
+2. map으로 배열 복제 후 indexOf로 순위 넣어주기
 ```js
-
+return emergency.map(v => newArr.indexOf(v)+1)
 ```
+# some && every
+every => **모든 조건이** 만족되면 true반환
+some => **하나만** 만족되도 true 반환
+만일 어떤 배열 중 하나만 만족되면 0을 반환해라! 이런 문제면 some을 쓰면 되고, 모두 만족하는지 확인이 필요하다면 every가 필요하다.
+
+# 변수를 true / false 스위치 시키고 싶다면? -> !변수
+
+
 ```js
 
 ```
